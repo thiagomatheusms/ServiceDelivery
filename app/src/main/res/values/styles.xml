@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="ExpandableTitle" parent="AppTheme">
+        <item name="android:textSize">0sp</item>
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="EditTextSearchBorderRounded" parent="Widget.AppCompat.EditText">
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/white</item>
+        <item name="android:background">@drawable/edit_text_rounded</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

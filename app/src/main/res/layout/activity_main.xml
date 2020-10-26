@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_home_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginLeft="@dimen/margin_24dp"
+        android:paddingTop="@dimen/margin_32dp"
+        android:text="@string/home_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp"
+        app:layout_anchor="@id/rv_home"
+        app:layout_anchorGravity="left|top" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:paddingTop="@dimen/margin_32dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_home" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="@dimen/margin_0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            app:expandedTitleTextAppearance="@style/ExpandableTitle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_420dp"
+                android:background="@drawable/toolbar_background"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/margin_24dp">
+
+                <TextView
+                    android:id="@+id/tv_collapsing_home"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_8dp"
+                    android:text="@string/collapsing_description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/et_collapsing_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_collapsing_home"
+                    style="@style/EditTextSearchBorderRounded"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="@dimen/margin_48dp"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    android:layout_marginRight="@dimen/margin_8dp"
+                    android:layout_marginBottom="@dimen/margin_40dp"
+                    android:background="@drawable/button_border_rounded"
+                    android:hint="@string/collapsing_hint_search"
+                    android:padding="@dimen/margin_16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_track_collapsing_home"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_search_collapsing_home"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_search_collapsing_home"
+                    style="@style/EditTextSearchBorderRounded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_0dp"
+                    android:background="@drawable/button_border_rounded"
+                    android:padding="@dimen/margin_12dp"
+                    android:src="@drawable/ic_search_black_24dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/et_collapsing_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/et_collapsing_home" />
+
+                <Button
+                    android:id="@+id/btn_track_collapsing_home"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_64dp"
+                    android:background="@drawable/button_border_rounded"
+                    android:backgroundTint="@color/black"
+                    android:text="@string/collapsing_button_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/toolbar_home"
+                layout="@layout/toolbar" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/rv_home"
+        app:layout_anchorGravity="left|bottom"
+        app:menu="@menu/bottom_navigation_menu"
+        app:backgroundTint="@color/white"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
